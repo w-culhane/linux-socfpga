@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: GPL-2.0+
+
+#include "socfpga_cyclone5_de10_nano.dtsi"
+
+/ {
+    model = "Audio Logic Audio Mini";
+
+    leds {
+        compatible = "gpio-leds";
+
+        hps0 {
+	    label = "hps_led0";
+            gpios = <&portb 24 0>;
+            linux,default-trigger = "heartbeat";
+        };
+    };
+};
