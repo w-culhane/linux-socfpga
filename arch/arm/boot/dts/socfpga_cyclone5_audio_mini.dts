@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0+
 
 #include "socfpga_cyclone5_de10_nano.dtsi"
+#include <dt-bindings/leds/common.h>
 
 / {
     model = "Audio Logic Audio Mini";
@@ -8,8 +9,9 @@
     leds {
         compatible = "gpio-leds";
 
-        hps0 {
-	    label = "hps_led0";
+        hps_user_led {
+	    color = <LED_COLOR_ID_GREEN>;
+	    function = LED_FUNCTION_HEARTBEAT;
             gpios = <&portb 24 0>;
             linux,default-trigger = "heartbeat";
         };
