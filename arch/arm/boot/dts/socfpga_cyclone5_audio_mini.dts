@@ -16,4 +16,16 @@
             linux,default-trigger = "heartbeat";
         };
     };
+
+    ad1939 {
+        compatible = "dev,al-ad1939";
+    };
+
+    tpa613a2 {
+        compatible = "dev,al-tpa613a2";
+    };
+};
+
+&spi0 {
+    status = "okay";
 };

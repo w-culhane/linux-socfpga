@@ -30,15 +30,6 @@
 		regulator-min-microvolt = <3300000>;
 		regulator-max-microvolt = <3300000>;
 	};
-
-	leds {
-		compatible = "gpio-leds";
-		hps0 {
-			label = "hps_led0";
-			gpios = <&portb 24 0>;
-			linux,default-trigger = "heartbeat";
-		};
-	};
 };
 
 &gmac1 {
