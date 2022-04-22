@@ -4,64 +4,64 @@
 #include <dt-bindings/leds/common.h>
 
 / {
-    model = "Audio Logic Audio Mini";
+	model = "Audio Logic Audio Mini";
 
-    leds {
-        compatible = "gpio-leds";
+	leds {
+		compatible = "gpio-leds";
 
-        hps_user_led {
-	    color = <LED_COLOR_ID_GREEN>;
-	    function = LED_FUNCTION_HEARTBEAT;
-            gpios = <&portb 24 0>;
-            linux,default-trigger = "heartbeat";
-        };
+		hps_user_led {
+			color = <LED_COLOR_ID_GREEN>;
+			function = LED_FUNCTION_HEARTBEAT;
+			gpios = <&portb 24 0>;
+			linux,default-trigger = "heartbeat";
+		};
 
-        audiomini0 {
-	    color = <LED_COLOR_ID_GREEN>;
-	    function = LED_FUNCTION_HEARTBEAT;
-            gpios = <&audiomini_led_controller 0 0>;
-            linux,default-trigger = "heartbeat";
-        };
+		audiomini0 {
+			color = <LED_COLOR_ID_GREEN>;
+			function = LED_FUNCTION_HEARTBEAT;
+			gpios = <&audiomini_led_controller 0 0>;
+			linux,default-trigger = "heartbeat";
+		};
 
-        audiomini1 {
-	    color = <LED_COLOR_ID_GREEN>;
-	    function = LED_FUNCTION_MTD;
-            gpios = <&audiomini_led_controller 1 0>;
-            linux,default-trigger = "mtd";
-        };
+		audiomini1 {
+			color = <LED_COLOR_ID_GREEN>;
+			function = LED_FUNCTION_MTD;
+			gpios = <&audiomini_led_controller 1 0>;
+			linux,default-trigger = "mtd";
+		};
 
-        audiomini2 {
-	    color = <LED_COLOR_ID_GREEN>;
-	    function = LED_FUNCTION_CPU;
-            gpios = <&audiomini_led_controller 2 0>;
-            linux,default-trigger = "cpu";
-        };
+		audiomini2 {
+			color = <LED_COLOR_ID_GREEN>;
+			function = LED_FUNCTION_CPU;
+			gpios = <&audiomini_led_controller 2 0>;
+			linux,default-trigger = "cpu";
+		};
 
-        audiomini3 {
-	    color = <LED_COLOR_ID_GREEN>;
-	    function = LED_FUNCTION_PANIC;
-            gpios = <&audiomini_led_controller 3 0>;
-            linux,default-trigger = "panic";
-        };
-    };
+		audiomini3 {
+			color = <LED_COLOR_ID_GREEN>;
+			function = LED_FUNCTION_PANIC;
+			gpios = <&audiomini_led_controller 3 0>;
+			linux,default-trigger = "panic";
+		};
+	};
 
-    ad1939 {
-        compatible = "dev,al-ad1939";
-    };
+	ad1939 {
+		compatible = "dev,al-ad1939";
+	};
 
-    tpa613a2 {
-        compatible = "dev,al-tpa613a2";
-    };
+	tpa613a2 {
+		compatible = "dev,al-tpa613a2";
+	};
 
-    audiomini_led_controller: gpio@ff200000 {
-        compatible = "altr,pio-1.0";
-        reg = <0xff200000 0x1>;
-        altr,ngpio = <4>;
-        #gpio-cells = <2>;
-        gpio-controller;
-    };
+	audiomini_led_controller: gpio@ff200000 {
+		compatible = "altr,pio-1.0";
+		reg = <0xff200000 0x1>;
+		altr,ngpio = <4>;
+		#gpio-cells = <2>;
+		gpio-controller;
+	};
 };
 
 &spi0 {
-    status = "okay";
+	status = "okay";
 };
