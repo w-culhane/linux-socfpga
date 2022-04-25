@@ -1,22 +1,18 @@
 #include "socfpga_cyclone5_de0.dtsi"
 
 /{
-    /************************************************************/
-    /* Add your device tree node                                */
-    /* for your Platform Designer component here                */
-    /* Example node with naming convention:                     */
-    /************************************************************/
-    /* 	my_label: platform_designer_name@component_address {    */
-    /*      compatible = "my_initials,platform_designer_name";  */
-    /*      reg = <component_address length>;                   */
-    /*  };                                                      */
-    /************************************************************/
-
-    leds: HPS_LED_patterns@ff200020 {
-	    compatible = "wmc,HPS_LED_patterns";
-	    reg = <0xff200020 0x10>;
+    color_led: HPS_color_LED@ff200000 {
+	    compatible = "wmc,HPS_color_LED";
+	    reg = <0xff200000 0x20>;
     };
-
+    adc: adc_0@ff200020 {
+	    compatible = "wmc,adc0";
+	    reg = <0xff200020 0xC>;
+    };
+    misc_io: HPS_misc_IO@ff200040 {
+	    compatible = "wmc,miscio";
+	    reg = <0xff200040 0x4>;
+    };
 };
 
 &spi0 {
