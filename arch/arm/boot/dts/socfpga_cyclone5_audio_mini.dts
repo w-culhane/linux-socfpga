@@ -60,6 +60,11 @@
 		#gpio-cells = <2>;
 		gpio-controller;
 	};
+
+	de10_led_array: led-array@ff200010 {
+		compatible = "culhane,led-array";
+		reg = <0xff200010 0x8>;
+	};
 };
 
 &spi0 {
