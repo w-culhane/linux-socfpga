@@ -61,14 +61,19 @@
 		gpio-controller;
 	};
 
-	de10_led_array: led-array@ff200028 {
+	de10_led_array: led-array@ff200038 {
 		compatible = "culhane,led-array";
-		reg = <0xff200028 0x8>;
+		reg = <0xff200038 0x8>;
 	};
 
-	tremolo: tremolo@ff200010 {
+	tremolo: tremolo@ff200020 {
 		compatible = "culhane,tremolo";
-		reg = <0xff200010 0x4>;
+		reg = <0xff200020 0x4>;
+	};
+
+	comb_filter: comb_filter@ff200010 {
+		compatible = "kiehn,comb_filter";
+		reg = <0xff200010 0x10>;
 	};
 };
 
